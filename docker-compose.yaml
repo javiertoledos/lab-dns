@@ -1,0 +1,15 @@
+version: "3"
+services:
+  dns:
+    build:
+      context: ./images/bind9
+    container_name: bind9
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    volumes:
+      - ./config/:/etc/bind
+      - dnscache:/var/cache/bind
+volumes:
+  dnscache:
+    driver: local
