@@ -1,6 +1,6 @@
 $TTL    604800
 @       IN      SOA     ns1.lab3-dns.example.com. root.lab3-dns.example.com. (
-                              3         ; Serial
+                              4         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
@@ -11,5 +11,4 @@ $TTL    604800
 ns1.lab3-dns.example.com.     IN      A     127.0.0.1
 
 
-@       IN      A       93.184.216.34
-@       IN      AAAA    2606:2800:220:1:248:1893:25c8:1946
+@       IN      A       10.0.0.1
