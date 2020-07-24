@@ -63,7 +63,7 @@ La líneas con doble punto y coma `;;` son líneas de comentarios y proveen
 información adicional de la petición y la respuesta. Estos comentarios se pueden
 eliminar con el parámetro `+nocomments`
 
-Analizando los comentarios podemos notar algunos de interes como los flags:
+Analizando los comentarios podemos notar algunos de interés como los flags:
 
 ```
 ;; flags: qr rd ra ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
@@ -102,8 +102,8 @@ Por último el comando devuelve información del tiempo de respuesta, el servido
 que se utilizó, la fecha y el tamaño de la respuesta.
 
 Para obtener una respuesta sin ningun tipo de comentarios se puede ejecutar el
-comando con los flags `+noall +answer` que significa quita todo display, y luego
-solo agrega la respuesta.
+comando con los flags `+noall +answer` que significa "quita toda información de
+despliegue, y luego solo agrega la respuesta."
 
 ```
 dig +noall +answer @1.1.1.1 protocolos.app
@@ -117,17 +117,17 @@ protocolos.app.         1056    IN      A       127.0.0.1
 
 El [contenido del laboratorio](https://github.com/javiertoledos/lab3-dns/archive/master.zip)
 consiste en una configuración con docker-compose para levantar un servidor de 
-bind9 utilizando Docker. Para levantar el laboratorio solo basta con ejecutar:
+bind9 utilizando Docker. Para levantar el laboratorio basta con ejecutar:
 
 ```
 docker-compose up
 ```
 
 El laboratorio incluye la definición de la imagen para instalar bind9 y expone
-el puerto 53 tanto en TCP como UDP para recibir queries. Si se ejecuta docker 
+el puerto 53 tanto en TCP como UDP para recibir queries. Si ejecutas docker 
 como usuario no `root` o hay problemas de firewall para usar el puerto 53 se 
 puede cambiar el mapeo en el archivo docker compose para usar un puerto no 
-estandar:
+estándar:
 
 ```
     ports:
@@ -138,7 +138,7 @@ estandar:
 
 El laboratorio tiene configurada una zona de ejemplo `lab3-dns.example.com`. 
 Para verificar que el servidor está arriba y funcionando se puede comprobar con
-dig corriendo:
+dig ejecutando:
 
 ```
 dig +noall +answer @localhost lab3-dns.example.com
@@ -184,7 +184,7 @@ hagan.
 
 **TIP:** Cuando modifiques un archivo de zona recuerda incrementar el número
 serial dentro del archivo `db.<número-de-carné>.intra` para que bind9 aplique
-los cambios. Tambien recuerda reiniciar el servicio cada vez que modifiques la
+los cambios. También recuerda reiniciar el servicio cada vez que modifiques la
 configuración.
 
 ## Entrega
@@ -192,7 +192,7 @@ configuración.
 1. Crea un archivo llamado lab3.txt en la carpeta raíz del laboratorio con el
   siguiente contenido:
     - Listado de los comandos (`dig`) necesarios para validar que está
-      correctamente configurado el dominio del ejercicio
+      correctamente configurado el dominio del ejercicio.
     - Explica que es DNS cache poisoning y como esto puede afectar la seguridad
       de los usuarios de tu servidor DNS.
     - Coloca 3 empresas o sitios web en donde puedes comprar y configurar 
