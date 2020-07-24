@@ -1,8 +1,8 @@
 # Laboratorio 3 - DNS
 
-El laboratorio consiste en utilizar bind9 como servidor DNS para configurarlo 
-como un servidor que resuelve queries y responde a un dominio configurado 
-localmente.
+El laboratorio consiste en utilizar dig como herramienta para realizar consultas
+de DNS y utilizar bind9 como servidor DNS para configurarlo para resolver
+consultas y responder a un dominio configurado localmente.
 
 
 ## Prerequisitos
@@ -82,7 +82,7 @@ y en el ejemplo se pueden observar los flags:
 Luego la sección de `;; OPT PSEUDOSECTION` indica si se estan haciendo uso de 
 las extensiones de DNS (útiles por ejemplo para DNSSEC)
 
-La seccines de pregunta y respuesta contiene la consulta que fue realizada y
+La secciones de pregunta y respuesta contiene la consulta que fue realizada y
 todos los registros con los que el servidor responde. En el ejemplo tenemos:
 
 ```
@@ -177,6 +177,10 @@ configuraciones:
   ```
   "v=spf1 ip4:10.0.0.0/29 ~all"
   ```
+
+Por último, configura el servidor de bind9 para que utilice los servidores DNS
+de Google (8.8.8.8 y 8.8.4.4) para responder las consultas recursivas que se le 
+hagan.
 
 **TIP:** Cuando modifiques un archivo de zona recuerda incrementar el número
 serial dentro del archivo `db.<número-de-carné>.intra` para que bind9 aplique
