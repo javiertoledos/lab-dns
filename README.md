@@ -160,10 +160,10 @@ este laboratorio los archivos relevantes son:
 Debes configurar el domino `<número-de-carné>.intra` en el servidor de forma que
 responda queries a este domino. El dominio debe tener las siguientes
 configuraciones:
-* El dominio raíz debe tener un registro A que apunte a una dirección IPv4. Para
-  el laboratorio escoge una dirección al azar en el segmento 10.0.0.0/8.
+* El dominio principal debe tener un registro A que apunte a una dirección IPv4. 
+  Para el laboratorio escoge una dirección al azar en el segmento 10.0.0.0/8.
 * Debe existir un registro de tipo CNAME para `www.<número-de-carné>.intra` que
-  apunte al directorio raíz
+  apunte al dominio principal.
 * Debe existir otro registro CNAME para `app.<número-de-carné>.intra` que apunte
   al dominio `protocolos.app`.
 * Configura el dominio `<numero-de-carné>.intra` con los siguientes servidores
