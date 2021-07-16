@@ -1,4 +1,4 @@
-# Laboratorio 3 - DNS
+# Laboratorio - DNS
 
 El laboratorio consiste en utilizar dig como herramienta para realizar consultas
 de DNS y utilizar bind9 como servidor DNS para configurarlo para resolver
