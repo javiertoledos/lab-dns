@@ -32,13 +32,13 @@ Prueba correr el ejemplo:
 
 ```
 # dig @<dns-server> <domain> <resource-record-type>
-dig @1.1.1.1 protocolos.app
+dig @1.1.1.1 contacto.top
 ```
 
 La respuesta debe ser similar a esta:
 
 ```
-; <<>> DiG 9.11.3-1ubuntu1.11-Ubuntu <<>> @1.1.1.1 protocolos.app
+; <<>> DiG 9.11.3-1ubuntu1.11-Ubuntu <<>> @1.1.1.1 contacto.top
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
@@ -48,10 +48,10 @@ La respuesta debe ser similar a esta:
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 1232
 ;; QUESTION SECTION:
-;protocolos.app.                        IN      A
+;contacto.top.                        IN      A
 
 ;; ANSWER SECTION:
-protocolos.app.         3255    IN      A       127.0.0.1
+contacto.top.         3255    IN      A       127.0.0.1
 
 ;; Query time: 17 msec
 ;; SERVER: 1.1.1.1#53(1.1.1.1)
@@ -87,13 +87,13 @@ todos los registros con los que el servidor responde. En el ejemplo tenemos:
 
 ```
 ;; QUESTION SECTION:
-;protocolos.app.                        IN      A
+;contacto.top.                        IN      A
 
 ;; ANSWER SECTION:
-protocolos.app.         3255    IN      A       127.0.0.1
+contacto.top.         3255    IN      A       127.0.0.1
 ```
 
-Esto significa que el comando preguntó por el dominio `protocolos.app.` de la 
+Esto significa que el comando preguntó por el dominio `contacto.top.` de la 
 clase de registros `IN` (Internet) y un registro de tipo `A`. La respuesta nos
 devuelve dominio, el tiempo de cache `3255` segundos, la clase `IN`, el tipo de
 registro `A` y la dirección IP asociada, en este caso `127.0.0.1`.
@@ -106,11 +106,11 @@ comando con los flags `+noall +answer` que significa "quita toda información de
 despliegue, y luego solo agrega la respuesta."
 
 ```
-dig +noall +answer @1.1.1.1 protocolos.app
+dig +noall +answer @1.1.1.1 contacto.top
 ```
 Resultado:
 ```
-protocolos.app.         1056    IN      A       127.0.0.1
+contacto.top.         1056    IN      A       127.0.0.1
 ```
 
 ### Levantando un servidor DNS con Bind9
@@ -165,13 +165,13 @@ configuraciones:
 * Debe existir un registro de tipo CNAME para `www.<número-de-carné>.intra` que
   apunte al dominio principal.
 * Debe existir otro registro CNAME para `app.<número-de-carné>.intra` que apunte
-  al dominio `protocolos.app`.
+  al dominio `contacto.top`.
 * Configura el dominio `<numero-de-carné>.intra` con los siguientes servidores
   de correo (registros MX). Asegurate de escoger una prioridad adecuada según el
   tipo de servidor:
-  * `main-smtp.protocolos.app.` como servidor MX principal
-  * `replica1-smtp.protocolos.app.` como servidor secundario 
-  * `replica2-smtp.protocolos.app.` como otro servidor secundario
+  * `main-smtp.contacto.top.` como servidor MX principal
+  * `replica1-smtp.contacto.top.` como servidor secundario 
+  * `replica2-smtp.contacto.top.` como otro servidor secundario
 * Configura el registro SPF para el dominio principal con la siguiente 
   información:
   ```
