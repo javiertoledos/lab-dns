@@ -21,7 +21,7 @@ realizar consultas a servidores DNS. En ubuntu, `dig` puede instalarse
 utilizando:
 
 ```
-sudo apt-get install -y dnsutils
+sudo apt install -y dnsutils
 
 # Corre dig -v para validar la instalación
 dig -v
@@ -120,7 +120,7 @@ consiste en una configuración con docker-compose para levantar un servidor de
 bind9 utilizando Docker. Para levantar el laboratorio basta con ejecutar:
 
 ```
-docker-compose up
+docker compose up
 ```
 
 El laboratorio incluye la definición de la imagen para instalar bind9 y expone
@@ -141,7 +141,7 @@ Para verificar que el servidor está arriba y funcionando se puede comprobar con
 dig ejecutando:
 
 ```
-dig +noall +answer @localhost lab3-dns.example.com
+dig +noall +answer @host.docker.internal lab3-dns.example.com
 ```
 ```
 lab3-dns.example.com.   604800  IN      A       10.0.0.1
